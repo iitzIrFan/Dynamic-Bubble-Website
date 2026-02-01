@@ -1,0 +1,425 @@
+/* ===================================
+   Premium Pricing Cards Design
+   Modern, Professional & Eye-Catching
+   =================================== */
+
+/* Target all pricing cards with gradient background */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] {
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px !important;
+    padding: 3.5rem 3rem !important;
+    border: 3px solid transparent;
+    box-shadow:
+        0 20px 60px rgba(124, 58, 237, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    background: linear-gradient(135deg, #7C3AED 0%, #9B7EDE 50%, #C4B5FD 100%) !important;
+}
+
+/* Animated Background Gradient */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #9B7EDE, #7C3AED, #C4B5FD, #A78BFA);
+    background-size: 400% 400%;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    animation: gradientMove 15s ease infinite;
+    border-radius: 32px;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover::before {
+    opacity: 1;
+}
+
+/* Glowing Border Effect */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 32px;
+    background: linear-gradient(45deg, #FFD700, #FFC107, #FFD700, #FFC107);
+    background-size: 300% 300%;
+    opacity: 0;
+    z-index: -1;
+    animation: borderGlow 3s ease infinite;
+    transition: opacity 0.6s ease;
+}
+
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover::after {
+    opacity: 1;
+}
+
+/* Hover State - 3D Lift */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover {
+    transform: translateY(-20px) scale(1.05) rotateX(5deg);
+    box-shadow:
+        0 30px 90px rgba(124, 58, 237, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 100px rgba(255, 215, 0, 0.3);
+}
+
+/* Heading Styling */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem !important;
+    transition: all 0.4s ease;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover h3 {
+    transform: scale(1.08);
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+/* Icon Enhancement */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] h3::before {
+    content: attr(data-icon);
+    display: inline-block;
+    margin: right 12px;
+    font-size: 2.5rem;
+    vertical-align: middle;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Description Text */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]>p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.125rem !important;
+    line-height: 1.8 !important;
+    opacity: 0.95 !important;
+    margin-bottom: 2rem !important;
+    transition: all 0.4s ease;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover>p {
+    opacity: 1 !important;
+    transform: translateY(-4px);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Features List Styling */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] ul {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem !important;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover ul {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* List Items */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] li {
+    position: relative;
+    padding-left: 35px !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Enhanced Checkmarks */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #1E1B4B;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li::before {
+    transform: scale(1.3) rotate(360deg);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] li:hover {
+    transform: translateX(8px);
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Staggered List Animation */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li {
+    animation: slideInFeature 0.5s ease forwards;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover li:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInFeature {
+    from {
+        opacity: 0.7;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* CTA Button Enhancement */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] .btn {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%) !important;
+    color: #7C3AED !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    padding: 1.25rem 3rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-shadow: none !important;
+    margin-top: 1.5rem !important;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] .btn::before,
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] .btn::after {
+    display: none !important;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] .btn:hover {
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%) !important;
+    color: #1E1B4B !important;
+    border-color: rgba(255, 215, 0, 0.5) !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow:
+        0 16px 40px rgba(255, 215, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] .btn span {
+    color: inherit !important;
+}
+
+/* Floating Particles */
+.pricing-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover .pricing-particle {
+    opacity: 1;
+    animation: particleFloat 4s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+/* Shine Effect */
+.pricing-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.8s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover .pricing-shine {
+    left: 150%;
+}
+
+/* Price Badge (Icon in Heading) */
+.pricing-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #FFD700, #FFC107);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow:
+        0 8px 24px rgba(255, 215, 0, 0.4),
+        0 0 40px rgba(255, 215, 0, 0.3);
+    animation: badgePulse 2s ease-in-out infinite;
+    z-index: 10;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 8px 24px rgba(255, 215, 0, 0.4),
+            0 0 40px rgba(255, 215, 0, 0.3);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow:
+            0 12px 32px rgba(255, 215, 0, 0.6),
+            0 0 60px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] {
+        padding: 2.5rem 2rem !important;
+        border-radius: 24px !important;
+    }
+
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover {
+        transform: translateY(-12px) scale(1.02);
+    }
+
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .pricing-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        top: -15px;
+        right: -15px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"],
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"] * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:hover {
+        transform: translateY(-8px);
+    }
+}
+
+/* Focus State */
+.card[style*="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))"]:focus-within {
+    outline: none;
+    box-shadow:
+        0 30px 90px rgba(124, 58, 237, 0.5),
+        0 0 0 4px rgba(255, 215, 0, 0.6);
+}
