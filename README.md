@@ -69,6 +69,16 @@ git push origin feature/amazing-new-feature
 ### 5. Submit a Pull Request (PR)
 Go to the original repository on GitHub and open a Pull Request. Provide a clear description of what you've done and why.
 
+### 6. Link Issues to PRs
+To automatically close an issue when your PR is merged, include a keyword in your PR description followed by the issue number.
+
+Common keywords include:
+*   `Closes #123`
+*   `Fixes #123`
+*   `Resolves #123`
+
+This helps maintainers track which changes solve which specific problems.
+
 ## 🎨 Style Guide
 
 *   **Colors:** Use the CSS variables defined in `:root` (e.g., `--color-primary`, `--color-text-dark`).
