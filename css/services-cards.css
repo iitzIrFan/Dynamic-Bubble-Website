@@ -1,0 +1,382 @@
+/* ===================================
+   Premium Services Cards Design
+   Modern, Professional & Interactive
+   =================================== */
+
+/* Service Detail Section Base */
+.service-detail {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(155, 126, 222, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.service-detail-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-detail-header .card-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #C4B5FD 0%, #9B7EDE 50%, #7C3AED 100%);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-detail-header .card-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.service-detail-header .card-icon:hover {
+    transform: scale(1.1) rotate(8deg);
+    box-shadow: 0 15px 50px rgba(124, 58, 237, 0.4);
+}
+
+/* Service Detail Content Grid */
+.service-detail-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium Service Card Design */
+.service-detail-card {
+    background: linear-gradient(135deg, #ffffff 0%, #FAFAFF 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Gradient Border Effect */
+.service-detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, #9B7EDE, #7C3AED, #C4B5FD, #A78BFA);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.service-detail-card:hover::before {
+    opacity: 1;
+}
+
+/* Glass Effect Overlay on Hover */
+.service-detail-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(155, 126, 222, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+
+.service-detail-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Hover State */
+.service-detail-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 20px 60px rgba(124, 58, 237, 0.25),
+        0 0 0 1px rgba(155, 126, 222, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #ffffff 0%, #F5F3FF 100%);
+}
+
+/* Icon Accent Bar */
+.service-detail-card h4::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, #9B7EDE, #7C3AED);
+    border-radius: 2px;
+    margin-right: 12px;
+    vertical-align: middle;
+    transition: all 0.4s ease;
+}
+
+.service-detail-card:hover h4::before {
+    height: 32px;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+}
+
+/* Card Heading */
+.service-detail-card h4 {
+    color: #1E1B4B;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.service-detail-card:hover h4 {
+    color: #7C3AED;
+    transform: translateX(4px);
+}
+
+/* List Styling */
+.service-detail-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.service-detail-card li {
+    color: #4C4773;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Checkmark Icons */
+.service-detail-card li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #C4B5FD 0%, #9B7EDE 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+}
+
+.service-detail-card:hover li::before {
+    transform: scale(1.2) rotate(90deg);
+    background: linear-gradient(135deg, #7C3AED 0%, #9B7EDE 100%);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+}
+
+.service-detail-card li:hover {
+    color: #1E1B4B;
+    padding-left: 2.5rem;
+    font-weight: 500;
+}
+
+/* Stagger Animation on Hover */
+.service-detail-card:hover li {
+    animation: slideInLeft 0.4s ease forwards;
+}
+
+.service-detail-card:hover li:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.service-detail-card:hover li:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.service-detail-card:hover li:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.service-detail-card:hover li:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.service-detail-card:hover li:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.service-detail-card:hover li:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0.6;
+        transform: translateX(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Floating Particles Effect */
+.service-detail-card .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(135deg, #C4B5FD, #9B7EDE);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.service-detail-card:hover .particle {
+    opacity: 0.6;
+    animation: floatParticle 3s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0.6;
+    }
+}
+
+/* Shine Effect on Hover */
+.service-detail-card .shine {
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+}
+
+.service-detail-card:hover .shine {
+    left: 150%;
+}
+
+/* Add particles and shine elements via JavaScript or keep pure CSS */
+/* For now, keeping it CSS-only for maximum compatibility */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-detail-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-detail-card {
+        padding: 2rem;
+    }
+
+    .service-detail-card h4 {
+        font-size: 1.25rem;
+    }
+
+    .service-detail-card li {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra Premium Touch: 3D Tilt Effect on Card */
+@media (hover: hover) and (min-width: 1024px) {
+    .service-detail-card {
+        transition: transform 0.1s ease-out, box-shadow 0.5s ease;
+    }
+
+    .service-detail-card.tilt-active {
+        transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(1.05);
+    }
+}
+
+/* Glow Pulse Animation for Special Cards */
+.service-detail-card.featured {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+    }
+
+    50% {
+        box-shadow: 0 8px 40px rgba(124, 58, 237, 0.2);
+    }
+}
