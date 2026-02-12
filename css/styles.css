@@ -1461,3 +1461,38 @@ a:hover {
 .hidden {
     display: none;
 }
+*/
+
+.contact-grid{
+  gap:4rem;
+  align-items:start;
+}
+
+@media (max-width: 900px){
+  .contact-grid{
+    gap:2rem;
+  }
+}
+
+*,*::before,::after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  min-width: 0;          /* 🔴 VERY IMPORTANT */
+  max-width: 100%;
+}
+/* Allow flex & grid children to shrink */
+.container,
+.grid,
+.grid > *,
+.flex,
+.flex > * {
+  min-width: 0;
+}
+section {
+  overflow-x: hidden;
+}
