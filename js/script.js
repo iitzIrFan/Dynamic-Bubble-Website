@@ -156,11 +156,13 @@ faqQuestions.forEach(question => {
             setTimeout(() => {
                 const rect = faqItem.getBoundingClientRect();
                 const isFullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+                const isMobile = window.innerWidth <= 768;
 
                 if (!isFullyVisible) {
                     faqItem.scrollIntoView({
                         behavior: 'smooth',
-                        block: 'nearest'
+                        block: isMobile ? 'start' : 'nearest',
+                        inline: 'nearest'
                     });
                 }
             }, 300); // Wait for animation to start
