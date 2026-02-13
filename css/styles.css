@@ -1440,28 +1440,7 @@ a:hover {
     box-shadow: var(--shadow-lg);
 }
 
-/* ===================================
 
-.text-center {
-    text-align: center;
-}
-
-.text-primary {
-    color: var(--color-primary);
-}
-
-.mb-0 {
-    margin-bottom: 0;
-}
-
-.mt-xl {
-    margin-top: var(--spacing-xl);
-}
-
-.hidden {
-    display: none;
-}
-*/
 
 .contact-grid{
   gap:4rem;
@@ -1482,9 +1461,11 @@ input,
 textarea,
 select {
   width: 100%;
-  min-width: 0;          /* 🔴 VERY IMPORTANT */
+  min-width: 0;         
   max-width: 100%;
 }
+
+
 /* Allow flex & grid children to shrink */
 .container,
 .grid,
@@ -1495,4 +1476,13 @@ select {
 }
 section {
   overflow-x: hidden;
+}
+
+
+html, body { overflow-x: clip; }
+.btn { isolation: isolate; }
+
+.contact-details a {
+    overflow-wrap: anywhere;   /* overflow solution */
+    word-break: break-word;    /* fallback */
 }
